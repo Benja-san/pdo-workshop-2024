@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-image: url("/media/kaamelott.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  padding: 6rem;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+}
+
+form label,
+form input,
+form textarea,
+form button {
+  display: block;
+  width: 100%;
+}
+
+form label {
+  margin-top: 2rem;
+}
+
+form button {
+  margin-top: 2rem;
+}
