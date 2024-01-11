@@ -1,12 +1,14 @@
 <?php
 
+// I need to use my database connexion
 require_once('database.php');
+// I need to fetch object from story class
+require_once('model/Story.php');
 
 $query = "SELECT * FROM story";
 
 $statement = $pdo->query($query);
-$stories = $statement->fetchAll();
-
+$stories = $statement->fetchAll(PDO::FETCH_CLASS, 'Story');
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +28,8 @@ $stories = $statement->fetchAll();
                 <?php foreach($stories as $story) : ?>
                 <li>
                     <article>
-                        <h2><?php echo $story["title"] ?></h2>
-                        <p><?php echo $story["content"] ?> <span><?php echo $story["author"] ?></span></p>
+                        <h2><?php echo $story->getTitle() ?></h2>
+                        <p><?php echo $story->getContent() ?><span> -- By <?php echo $story->getauthor() ?></span></p>
                     </article>
                 </li>
                 <?php endforeach ?>

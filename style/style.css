@@ -38,3 +38,7 @@ form label {
 form button {
   margin-top: 2rem;
 }
+
+article p span {
+  font-style: italic;
+}
